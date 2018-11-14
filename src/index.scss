@@ -1,0 +1,539 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, button,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5 {
+	display: block;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+// Color pallete
+$bg-blue: #23b7d4;
+$bg-blue-square: #81c0e9;
+$bg-blue-light: #97c7eb;
+$bg-yellow: #ffe130;
+$bg-grey: #f4f4f4;
+$text-grey: #575756;
+$black: #575756;
+$white: #fff;
+$text-subtitle: #3c3c3b;
+$text-paragraph: #575756;
+$montserrat: 'Montserrat', 'Arial';
+$opensans: 'Open Sans', 'Arial';
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+p {
+	line-height: 1.7;
+	margin-bottom: 10px;
+}
+b, strong {
+	font-weight: bold;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+button {
+	display:block;
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	cursor: pointer;
+	background: none;
+}
+body {
+	font-family: $opensans;
+	font-size: 17px;
+	color: $text-paragraph;
+}
+
+.container-fluid {
+	position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container {
+	position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @media screen and (min-width: 1200px) {
+		max-width: 1200px;
+	}
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9 {
+	position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    @media screen and (max-width: 768px) {
+    	max-width: 100% !important;
+    	flex: 0 0 100% !important;
+    }
+}
+.col-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}
+.col-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+.col-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.col-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+.col-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+.col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.col-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+.col-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+.btn {
+	display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    font-family: $montserrat;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    border-radius: .25rem;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &.btn-small {
+    	padding: 8px 16px;
+    	border-radius: 0;
+    }
+    &.btn-outline {
+    	background-color: transparent;
+    	color: #414141;
+    	border: 3px solid;
+    	&.white {
+    		color: $white;
+    		border-color: $white;
+    	}
+    	&.black {
+    		color: $black;
+    		border-color: $black;
+    		&:hover {
+    			background-color: $black;
+    			color: $white !important;
+    		}
+    	}
+    }
+}
+.mt-1-5em {
+	margin-top: 1.5em;
+}
+.mb-7em {
+	margin-bottom: 7em;
+}
+.img-100 {
+	width: 100%;
+}
+.title-lg {
+	font-size: 58px;
+}
+.text-white {
+	color: $white;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.bg-blue-light {
+	background-color: $bg-blue-light;
+}
+.bg-grey {
+	background-color: $bg-grey
+}
+.bg-white {
+	background-color: $white;
+}
+.bg-yellow {
+	background-color: $bg-yellow;
+}
+.text-grey {
+	color: $text-grey;
+}
+.line {
+	width: 126px;
+    height: 8px;
+	background-image: url('./images/line.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+h1, h2, h3, h4, h5 {
+	font-family: $montserrat;
+	margin-bottom: 10px;
+}
+h3 {
+	font-weight: bold;
+	font-size: 21px;
+}
+h4 {
+	font-weight: bold;
+	font-size: 17px;
+    line-height: 1.5;
+}
+h5 {
+	font-size: 14px;
+}
+.fa {
+	margin-left: 8px;
+	&:before {
+		font-size: 18px;
+		position: relative;
+		top: 1px;
+	}
+}
+.app-wrapper {
+	.title-section {
+		text-transform: uppercase;
+		font-family: $montserrat;
+		font-weight: bold;
+		font-size: 25px;
+		color: #3c3c3b;
+	}
+	.slider-wrapper {
+		padding: 2.8em 0;
+	}
+	.banner-wrapper {
+		background-color: $bg-blue;
+		.header {
+			padding: 20px;
+			position: relative;
+			.brand-logo {
+				width: 120px;
+			}
+			.menu {
+				position: absolute;
+				top: 25px;
+				right: 66px;
+				.btn-menu {
+					.icon-menu {
+						width: 55px;
+					}
+				}	
+			}
+		}
+		.banner {
+			position: relative;
+			padding: 4em 0;
+			@media screen and (max-width: 768px) {
+				padding: 4em 5em;
+			}
+			.banner-vector {
+				width: 140px;
+				margin: auto;
+				@media screen and (max-width: 768px) {
+					display: none;
+				}
+			}
+			.title-banner-wrapper {
+				.title-banner {
+					font-family: $montserrat;
+				    font-weight: 600;
+				    margin: 2.3em 0 0.4em 0;
+				    @media screen and (max-width: 768px) {
+						margin: 1em 0 0.4em 0;
+					}
+				}
+				 @media screen and (max-width: 768px) {
+					width: 100%;
+    				text-align: center;
+    				margin-bottom: 3em;
+				}
+			}
+			.square {
+				width: 80px;
+			    height: 80px;
+			    position: absolute;
+			    bottom: -90px;
+			    left: 0;
+			}
+		}
+	}
+	.info {
+		padding: 7em 0 2em 0;
+		@media screen and (max-width: 768px) {
+			padding: 7em 2em 2em;
+		}
+		.info-ill {
+			@media screen and (max-width: 768px) {
+				margin: 1em 0;
+			}
+		}
+		.subtitle-info {
+			font-size: 21px;
+		    font-weight: 600;
+		    margin-top: 1.5em;
+		    line-height: 1.4;
+		    color: $text-subtitle;
+		}
+		.paragraph-info {
+		   	margin-top: 1.5em;
+		    line-height: 1.7;
+		    font-size: 17px;
+		    font-weight: 400;
+			color: $text-paragraph;
+		}
+		.pr-5em {
+			padding-right: 5em;
+			@media screen and (max-width: 768px) {
+				padding: 0;
+			}
+		}
+		.pl-5em {
+			padding-left: 5em;
+			@media screen and (max-width: 768px) {
+				padding: 0;
+			}
+		}
+	}
+	.advantages {
+		padding: 7em 0;
+		.advantages-inner {
+		    padding: 0 4em;
+		    margin-bottom: 4em;
+			text-align: center;
+			@media screen and (max-width: 768px) {
+				padding: 0 1em;
+			}
+			.img-advantages {
+				width: 150px;
+				margin-bottom: 25px;
+			}
+			.title-advantages {
+				font-size: 20px;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.product {
+		position: relative;;
+		.space-box {
+			width: 100%;
+			height: 200px;
+			position: absolute;
+			top: 0;
+		}
+		.slider-wrapper {
+			.slider {
+				padding: 0 30px;
+				margin: 1em 0;
+				.slick-slide {
+						width: 18% !important;
+					    margin: 10px;
+						box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+						@media screen and (max-width: 768px) {
+							width: 100% !important;
+						}
+					.slick-item {
+						text-align: center;
+						background-color: $white;
+						a {
+							color: $black;
+						}
+						h5 {
+							padding: 25px;
+							text-transform: uppercase;
+							font-weight: 700;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.partner {
+		padding: 2.8em 0;
+		.logo-partner {
+			margin: 4em 0 2em;
+			.logo-wrapper {
+				display: flex;
+				justify-content: center;
+				> img {
+					margin: auto;
+				}
+			}
+		}
+	}
+	.article {
+		.article-inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.right-link {
+				color: $black;
+				font-weight: 500;
+			}
+		}
+		padding: 2.8em 1em;
+		.article-box {
+			margin: 2em 0 0;
+			.article-item {
+				@media screen and (max-width: 768px) {
+					margin-bottom: 3em;
+				}
+				> img {
+					margin-bottom: 20px;
+				}
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+	.footer {
+		position: relative;
+		.footer-wrapper {
+			display: flex;
+   			flex-direction: row;
+   			padding: 5em 0;
+   			 @media screen and (max-width: 768px) {
+				display: block;
+   				flex-direction: unset;
+   				text-align: center;
+			}
+			.footer-item {
+				margin-right: 5em;
+				@media screen and (max-width: 768px) {
+					margin: 0 0 1em 0;
+				}
+				h4 {
+					font-size: 16px;
+					color: $white;
+					font-family: $montserrat;
+					font-weight: 600;
+					margin-bottom: 5px;
+				}
+				span {
+					display: block;
+				    font-size: 13px;
+				    color: #fff;
+				    font-weight: 500;
+				    margin-bottom: 5px;
+				}
+				.img-logo {
+					width: 150px;
+				}
+				ul {
+					display: flex;
+					 @media screen and (max-width: 768px) {
+						display: inline-flex;
+					}
+					> li {
+						margin-right: 30px;
+						&:last-child {
+							margin: 0;
+						}
+						img {
+							width: 35px;
+						}
+					}
+				}
+			}
+		}
+		.square-blue {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 244px;
+			height: 100%;
+			background-color: $bg-blue-square;	
+		    @media screen and (max-width: 768px) {
+				display: none
+			}
+		}
+	}
+}
+
+
